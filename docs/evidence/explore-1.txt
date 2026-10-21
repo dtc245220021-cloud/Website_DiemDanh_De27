@@ -1,0 +1,585 @@
+Skip to main content
+Grafana
+Home
+Bookmarks
+Starred
+Dashboards
+Explore
+Drilldown
+Alerting
+Connections
+Administration
+Home
+Explore
+Loki
+Search...
+ctrl+k
+Query history
+Share
+Explore
+Outline
+Go queryless
+Split
+Add
+Live
+Queries
+Logs
+A
+(Loki)
+Kick start your query
+Label browser
+Explain query
+Builder
+Code
+{project="attendance27",job="nginx"} | json
+Options
+Type: Range
+Line limit: 1000
+Direction: Backward
+Add query
+Query inspector
+Logs volume
+logs
+Total: 177
+Loki
+Logs
+Logs
+Table
+177 lines displayed
+Total bytes processed:
+21.4 kB
+Common labels:
+job=nginx
+project=attendance27
+service_name=nginx
+		2026-10-21 17:16:45.000	
+{"timestamp":"2026-10-21T10:16:45+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.040}
+	
+		2026-10-21 17:16:40.000	
+{"timestamp":"2026-10-21T10:16:40+00:00","method":"GET","path":"/api/shifts","status":304,"bytes":0,"request_time":0.046}
+	
+		2026-10-21 17:16:40.000	
+{"timestamp":"2026-10-21T10:16:40+00:00","method":"POST","path":"/api/check-out","status":200,"bytes":11,"request_time":0.132}
+	
+		2026-10-21 17:16:40.000	
+{"timestamp":"2026-10-21T10:16:40+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":506,"request_time":0.050}
+	
+		2026-10-21 17:16:40.000	
+{"timestamp":"2026-10-21T10:16:40+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":487,"request_time":0.075}
+	
+		2026-10-21 17:16:40.000	
+{"timestamp":"2026-10-21T10:16:40+00:00","method":"GET","path":"/api/shifts","status":304,"bytes":0,"request_time":0.026}
+	
+		2026-10-21 17:16:39.000	
+{"timestamp":"2026-10-21T10:16:39+00:00","method":"POST","path":"/api/check-in","status":201,"bytes":11,"request_time":0.091}
+	
+		2026-10-21 17:16:39.000	
+{"timestamp":"2026-10-21T10:16:39+00:00","method":"GET","path":"/api/shifts","status":200,"bytes":229,"request_time":0.030}
+	
+		2026-10-21 17:16:39.000	
+{"timestamp":"2026-10-21T10:16:39+00:00","method":"GET","path":"/api/session","status":200,"bytes":150,"request_time":0.007}
+	
+		2026-10-21 17:16:39.000	
+{"timestamp":"2026-10-21T10:16:39+00:00","method":"POST","path":"/api/login","status":200,"bytes":150,"request_time":0.440}
+	
+		2026-10-21 17:16:39.000	
+{"timestamp":"2026-10-21T10:16:39+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":253,"request_time":0.070}
+	
+		2026-10-21 17:16:38.000	
+{"timestamp":"2026-10-21T10:16:38+00:00","method":"GET","path":"/app.js","status":200,"bytes":8392,"request_time":0.006}
+	
+		2026-10-21 17:16:38.000	
+{"timestamp":"2026-10-21T10:16:38+00:00","method":"GET","path":"/","status":200,"bytes":7335,"request_time":0.012}
+	
+		2026-10-21 17:16:38.000	
+{"timestamp":"2026-10-21T10:16:38+00:00","method":"GET","path":"/style.css","status":200,"bytes":7538,"request_time":0.007}
+	
+		2026-10-21 17:16:38.000	
+{"timestamp":"2026-10-21T10:16:38+00:00","method":"GET","path":"/fonts/BeVietnamPro-SemiBold.ttf","status":200,"bytes":136736,"request_time":0.030}
+	
+		2026-10-21 17:16:38.000	
+{"timestamp":"2026-10-21T10:16:38+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.017}
+	
+		2026-10-21 17:16:37.000	
+{"timestamp":"2026-10-21T10:16:37+00:00","method":"POST","path":"/api/login","status":200,"bytes":146,"request_time":0.470}
+	
+		2026-10-21 17:16:37.000	
+{"timestamp":"2026-10-21T10:16:37+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":1524,"request_time":0.041}
+	
+		2026-10-21 17:16:37.000	
+{"timestamp":"2026-10-21T10:16:37+00:00","method":"GET","path":"/api/users","status":200,"bytes":784,"request_time":0.010}
+	
+		2026-10-21 17:16:37.000	
+{"timestamp":"2026-10-21T10:16:37+00:00","method":"GET","path":"/api/shifts","status":200,"bytes":229,"request_time":0.043}
+	
+		2026-10-21 17:16:37.000	
+{"timestamp":"2026-10-21T10:16:37+00:00","method":"GET","path":"/api/session","status":200,"bytes":146,"request_time":0.013}
+	
+		2026-10-21 17:16:36.000	
+{"timestamp":"2026-10-21T10:16:36+00:00","method":"GET","path":"/favicon.ico","status":404,"bytes":48,"request_time":0.007}
+	
+		2026-10-21 17:16:36.000	
+{"timestamp":"2026-10-21T10:16:36+00:00","method":"GET","path":"/style.css","status":200,"bytes":7538,"request_time":0.014}
+	
+		2026-10-21 17:16:36.000	
+{"timestamp":"2026-10-21T10:16:36+00:00","method":"GET","path":"/app.js","status":200,"bytes":8392,"request_time":0.023}
+	
+		2026-10-21 17:16:36.000	
+{"timestamp":"2026-10-21T10:16:36+00:00","method":"GET","path":"/fonts/BeVietnamPro-SemiBold.ttf","status":200,"bytes":136736,"request_time":0.022}
+	
+		2026-10-21 17:16:36.000	
+{"timestamp":"2026-10-21T10:16:36+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.062}
+	
+		2026-10-21 17:16:34.000	
+{"timestamp":"2026-10-21T10:16:34+00:00","method":"GET","path":"/","status":200,"bytes":7335,"request_time":0.035}
+	
+		2026-10-21 17:16:29.000	
+{"timestamp":"2026-10-21T10:16:29+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.029}
+	
+		2026-10-21 17:16:13.000	
+{"timestamp":"2026-10-21T10:16:13+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.009}
+	
+		2026-10-21 17:16:13.000	
+{"timestamp":"2026-10-21T10:16:13+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":1524,"request_time":0.032}
+	
+		2026-10-21 17:16:13.000	
+{"timestamp":"2026-10-21T10:16:13+00:00","method":"POST","path":"/api/login","status":200,"bytes":146,"request_time":0.564}
+	
+		2026-10-21 17:16:13.000	
+{"timestamp":"2026-10-21T10:16:13+00:00","method":"GET","path":"/api/users","status":200,"bytes":784,"request_time":0.014}
+	
+		2026-10-21 17:16:13.000	
+{"timestamp":"2026-10-21T10:16:13+00:00","method":"GET","path":"/api/session","status":200,"bytes":146,"request_time":0.016}
+	
+		2026-10-21 17:16:13.000	
+{"timestamp":"2026-10-21T10:16:13+00:00","method":"GET","path":"/api/shifts","status":200,"bytes":229,"request_time":0.036}
+	
+		2026-10-21 17:16:10.000	
+{"timestamp":"2026-10-21T10:16:10+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.089}
+	
+		2026-10-21 17:16:10.000	
+{"timestamp":"2026-10-21T10:16:10+00:00","method":"GET","path":"/fonts/BeVietnamPro-SemiBold.ttf","status":200,"bytes":136736,"request_time":0.022}
+	
+		2026-10-21 17:16:10.000	
+{"timestamp":"2026-10-21T10:16:10+00:00","method":"GET","path":"/favicon.ico","status":404,"bytes":48,"request_time":0.009}
+	
+		2026-10-21 17:16:09.000	
+{"timestamp":"2026-10-21T10:16:09+00:00","method":"GET","path":"/style.css","status":200,"bytes":7538,"request_time":0.011}
+	
+		2026-10-21 17:16:09.000	
+{"timestamp":"2026-10-21T10:16:09+00:00","method":"GET","path":"/app.js","status":200,"bytes":8392,"request_time":0.011}
+	
+		2026-10-21 17:16:09.000	
+{"timestamp":"2026-10-21T10:16:09+00:00","method":"GET","path":"/","status":200,"bytes":7335,"request_time":0.048}
+	
+		2026-10-21 17:15:58.000	
+{"timestamp":"2026-10-21T10:15:58+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.007}
+	
+		2026-10-21 17:15:43.000	
+{"timestamp":"2026-10-21T10:15:43+00:00","method":"GET","path":"/health","status":502,"bytes":150,"request_time":3.087}
+	
+		2026-10-21 17:15:25.000	
+{"timestamp":"2026-10-21T10:15:25+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.011}
+	
+		2026-10-21 17:15:09.000	
+{"timestamp":"2026-10-21T10:15:09+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:14:54.000	
+{"timestamp":"2026-10-21T10:14:54+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.010}
+	
+		2026-10-21 17:14:39.000	
+{"timestamp":"2026-10-21T10:14:39+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.136}
+	
+		2026-10-21 17:14:23.000	
+{"timestamp":"2026-10-21T10:14:23+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.109}
+	
+		2026-10-21 17:13:54.000	
+{"timestamp":"2026-10-21T10:13:54+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.127}
+	
+		2026-10-21 17:13:35.000	
+{"timestamp":"2026-10-21T10:13:35+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.672}
+	
+		2026-10-21 17:13:10.000	
+{"timestamp":"2026-10-21T10:13:10+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.072}
+	
+		2026-10-21 17:12:55.000	
+{"timestamp":"2026-10-21T10:12:55+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.054}
+	
+		2026-10-21 17:12:40.000	
+{"timestamp":"2026-10-21T10:12:40+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.011}
+	
+		2026-10-21 17:12:25.000	
+{"timestamp":"2026-10-21T10:12:25+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:12:09.000	
+{"timestamp":"2026-10-21T10:12:09+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.004}
+	
+		2026-10-21 17:11:53.000	
+{"timestamp":"2026-10-21T10:11:53+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.183}
+	
+		2026-10-21 17:11:25.000	
+{"timestamp":"2026-10-21T10:11:25+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.138}
+	
+		2026-10-21 17:11:11.000	
+{"timestamp":"2026-10-21T10:11:11+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":1524,"request_time":0.062}
+	
+		2026-10-21 17:11:11.000	
+{"timestamp":"2026-10-21T10:11:11+00:00","method":"GET","path":"/api/shifts","status":200,"bytes":229,"request_time":0.099}
+	
+		2026-10-21 17:11:11.000	
+{"timestamp":"2026-10-21T10:11:11+00:00","method":"GET","path":"/api/users","status":200,"bytes":784,"request_time":0.026}
+	
+		2026-10-21 17:11:10.000	
+{"timestamp":"2026-10-21T10:11:10+00:00","method":"POST","path":"/api/login","status":200,"bytes":146,"request_time":0.830}
+	
+		2026-10-21 17:11:10.000	
+{"timestamp":"2026-10-21T10:11:10+00:00","method":"GET","path":"/api/session","status":200,"bytes":146,"request_time":0.028}
+	
+		2026-10-21 17:11:08.000	
+{"timestamp":"2026-10-21T10:11:08+00:00","method":"GET","path":"/app.js","status":200,"bytes":8023,"request_time":0.041}
+	
+		2026-10-21 17:11:08.000	
+{"timestamp":"2026-10-21T10:11:08+00:00","method":"GET","path":"/favicon.ico","status":404,"bytes":48,"request_time":0.073}
+	
+		2026-10-21 17:11:08.000	
+{"timestamp":"2026-10-21T10:11:08+00:00","method":"GET","path":"/style.css","status":200,"bytes":7332,"request_time":0.032}
+	
+		2026-10-21 17:11:08.000	
+{"timestamp":"2026-10-21T10:11:08+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.169}
+	
+		2026-10-21 17:11:07.000	
+{"timestamp":"2026-10-21T10:11:07+00:00","method":"GET","path":"/","status":200,"bytes":7056,"request_time":0.789}
+	
+		2026-10-21 17:11:07.000	
+{"timestamp":"2026-10-21T10:11:07+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.060}
+	
+		2026-10-21 17:10:51.000	
+{"timestamp":"2026-10-21T10:10:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:10:36.000	
+{"timestamp":"2026-10-21T10:10:36+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.158}
+	
+		2026-10-21 17:10:20.000	
+{"timestamp":"2026-10-21T10:10:20+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.037}
+	
+		2026-10-21 17:10:04.000	
+{"timestamp":"2026-10-21T10:10:04+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.057}
+	
+		2026-10-21 17:09:51.000	
+{"timestamp":"2026-10-21T10:09:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.110}
+	
+		2026-10-21 17:09:35.000	
+{"timestamp":"2026-10-21T10:09:35+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:09:18.000	
+{"timestamp":"2026-10-21T10:09:18+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.234}
+	
+		2026-10-21 17:08:59.000	
+{"timestamp":"2026-10-21T10:08:59+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.009}
+	
+		2026-10-21 17:08:46.000	
+{"timestamp":"2026-10-21T10:08:46+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.020}
+	
+		2026-10-21 17:08:29.000	
+{"timestamp":"2026-10-21T10:08:29+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.091}
+	
+		2026-10-21 17:08:06.000	
+{"timestamp":"2026-10-21T10:08:06+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.190}
+	
+		2026-10-21 17:07:51.000	
+{"timestamp":"2026-10-21T10:07:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.512}
+	
+		2026-10-21 17:07:08.000	
+{"timestamp":"2026-10-21T10:07:08+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.585}
+	
+		2026-10-21 17:06:36.000	
+{"timestamp":"2026-10-21T10:06:36+00:00","method":"GET","path":"/health","status":502,"bytes":150,"request_time":2.115}
+	
+		2026-10-21 17:06:16.000	
+{"timestamp":"2026-10-21T10:06:16+00:00","method":"GET","path":"/health","status":502,"bytes":150,"request_time":0.005}
+	
+		2026-10-21 17:06:01.000	
+{"timestamp":"2026-10-21T10:06:01+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.155}
+	
+		2026-10-21 17:05:43.000	
+{"timestamp":"2026-10-21T10:05:43+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.107}
+	
+		2026-10-21 17:05:27.000	
+{"timestamp":"2026-10-21T10:05:27+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.111}
+	
+		2026-10-21 17:05:12.000	
+{"timestamp":"2026-10-21T10:05:12+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.020}
+	
+		2026-10-21 17:04:56.000	
+{"timestamp":"2026-10-21T10:04:56+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.005}
+	
+		2026-10-21 17:04:52.000	
+{"timestamp":"2026-10-21T10:04:52+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.010}
+	
+		2026-10-21 17:04:52.000	
+{"timestamp":"2026-10-21T10:04:52+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.004}
+	
+		2026-10-21 17:04:52.000	
+{"timestamp":"2026-10-21T10:04:52+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.003}
+	
+		2026-10-21 17:04:52.000	
+{"timestamp":"2026-10-21T10:04:52+00:00","method":"GET","path":"/evidence-not-found","status":404,"bytes":48,"request_time":0.008}
+	
+		2026-10-21 17:04:51.000	
+{"timestamp":"2026-10-21T10:04:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.003}
+	
+		2026-10-21 17:04:51.000	
+{"timestamp":"2026-10-21T10:04:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.016}
+	
+		2026-10-21 17:04:51.000	
+{"timestamp":"2026-10-21T10:04:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.034}
+	
+		2026-10-21 17:04:51.000	
+{"timestamp":"2026-10-21T10:04:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.005}
+	
+		2026-10-21 17:04:51.000	
+{"timestamp":"2026-10-21T10:04:51+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.008}
+	
+		2026-10-21 17:04:50.000	
+{"timestamp":"2026-10-21T10:04:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.015}
+	
+		2026-10-21 17:04:50.000	
+{"timestamp":"2026-10-21T10:04:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.011}
+	
+		2026-10-21 17:04:50.000	
+{"timestamp":"2026-10-21T10:04:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.013}
+	
+		2026-10-21 17:04:50.000	
+{"timestamp":"2026-10-21T10:04:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:04:50.000	
+{"timestamp":"2026-10-21T10:04:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.022}
+	
+		2026-10-21 17:04:50.000	
+{"timestamp":"2026-10-21T10:04:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.003}
+	
+		2026-10-21 17:04:49.000	
+{"timestamp":"2026-10-21T10:04:49+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:04:49.000	
+{"timestamp":"2026-10-21T10:04:49+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.022}
+	
+		2026-10-21 17:04:49.000	
+{"timestamp":"2026-10-21T10:04:49+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.004}
+	
+		2026-10-21 17:04:49.000	
+{"timestamp":"2026-10-21T10:04:49+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.010}
+	
+		2026-10-21 17:04:49.000	
+{"timestamp":"2026-10-21T10:04:49+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.005}
+	
+		2026-10-21 17:04:49.000	
+{"timestamp":"2026-10-21T10:04:49+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.014}
+	
+		2026-10-21 17:04:48.000	
+{"timestamp":"2026-10-21T10:04:48+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.017}
+	
+		2026-10-21 17:04:48.000	
+{"timestamp":"2026-10-21T10:04:48+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.004}
+	
+		2026-10-21 17:04:48.000	
+{"timestamp":"2026-10-21T10:04:48+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.003}
+	
+		2026-10-21 17:04:48.000	
+{"timestamp":"2026-10-21T10:04:48+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.020}
+	
+		2026-10-21 17:04:41.000	
+{"timestamp":"2026-10-21T10:04:41+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.025}
+	
+		2026-10-21 17:04:24.000	
+{"timestamp":"2026-10-21T10:04:24+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.031}
+	
+		2026-10-21 17:04:08.000	
+{"timestamp":"2026-10-21T10:04:08+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.056}
+	
+		2026-10-21 17:03:53.000	
+{"timestamp":"2026-10-21T10:03:53+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.170}
+	
+		2026-10-21 17:03:37.000	
+{"timestamp":"2026-10-21T10:03:37+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.019}
+	
+		2026-10-21 17:03:21.000	
+{"timestamp":"2026-10-21T10:03:21+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.296}
+	
+		2026-10-21 17:03:04.000	
+{"timestamp":"2026-10-21T10:03:04+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.202}
+	
+		2026-10-21 17:02:42.000	
+{"timestamp":"2026-10-21T10:02:42+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.108}
+	
+		2026-10-21 17:02:25.000	
+{"timestamp":"2026-10-21T10:02:25+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.035}
+	
+		2026-10-21 17:02:10.000	
+{"timestamp":"2026-10-21T10:02:10+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.007}
+	
+		2026-10-21 17:01:55.000	
+{"timestamp":"2026-10-21T10:01:55+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.102}
+	
+		2026-10-21 17:01:39.000	
+{"timestamp":"2026-10-21T10:01:39+00:00","method":"GET","path":"/api/session","status":200,"bytes":146,"request_time":0.019}
+	
+		2026-10-21 17:01:39.000	
+{"timestamp":"2026-10-21T10:01:39+00:00","method":"GET","path":"/api/shifts","status":200,"bytes":229,"request_time":0.062}
+	
+		2026-10-21 17:01:39.000	
+{"timestamp":"2026-10-21T10:01:39+00:00","method":"GET","path":"/api/users","status":200,"bytes":784,"request_time":0.035}
+	
+		2026-10-21 17:01:39.000	
+{"timestamp":"2026-10-21T10:01:39+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.330}
+	
+		2026-10-21 17:01:39.000	
+{"timestamp":"2026-10-21T10:01:39+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":1524,"request_time":0.064}
+	
+		2026-10-21 17:01:39.000	
+{"timestamp":"2026-10-21T10:01:39+00:00","method":"POST","path":"/api/login","status":200,"bytes":146,"request_time":0.932}
+	
+		2026-10-21 17:01:35.000	
+{"timestamp":"2026-10-21T10:01:35+00:00","method":"GET","path":"/style.css","status":200,"bytes":7245,"request_time":0.022}
+	
+		2026-10-21 17:01:35.000	
+{"timestamp":"2026-10-21T10:01:35+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.080}
+	
+		2026-10-21 17:01:35.000	
+{"timestamp":"2026-10-21T10:01:35+00:00","method":"GET","path":"/favicon.ico","status":404,"bytes":48,"request_time":0.009}
+	
+		2026-10-21 17:01:35.000	
+{"timestamp":"2026-10-21T10:01:35+00:00","method":"GET","path":"/app.js","status":200,"bytes":7912,"request_time":0.017}
+	
+		2026-10-21 17:01:30.000	
+{"timestamp":"2026-10-21T10:01:30+00:00","method":"GET","path":"/","status":200,"bytes":6965,"request_time":0.183}
+	
+		2026-10-21 17:01:24.000	
+{"timestamp":"2026-10-21T10:01:24+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.006}
+	
+		2026-10-21 17:01:08.000	
+{"timestamp":"2026-10-21T10:01:08+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.005}
+	
+		2026-10-21 17:00:53.000	
+{"timestamp":"2026-10-21T10:00:53+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.081}
+	
+		2026-10-21 17:00:38.000	
+{"timestamp":"2026-10-21T10:00:38+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.125}
+	
+		2026-10-21 17:00:22.000	
+{"timestamp":"2026-10-21T10:00:22+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.135}
+	
+		2026-10-21 17:00:08.000	
+{"timestamp":"2026-10-21T10:00:08+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":1524,"request_time":0.103}
+	
+		2026-10-21 17:00:08.000	
+{"timestamp":"2026-10-21T10:00:08+00:00","method":"GET","path":"/demo-missing","status":404,"bytes":48,"request_time":0.013}
+	
+		2026-10-21 17:00:08.000	
+{"timestamp":"2026-10-21T10:00:08+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.047}
+	
+		2026-10-21 17:00:08.000	
+{"timestamp":"2026-10-21T10:00:08+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.014}
+	
+		2026-10-21 17:00:07.000	
+{"timestamp":"2026-10-21T10:00:07+00:00","method":"GET","path":"/health","status":502,"bytes":150,"request_time":1.011}
+	
+		2026-10-21 17:00:07.000	
+{"timestamp":"2026-10-21T10:00:07+00:00","method":"GET","path":"/health","status":502,"bytes":150,"request_time":0.001}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"DELETE","path":"/api/users/1","status":400,"bytes":54,"request_time":0.008}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"POST","path":"/api/check-out","status":409,"bytes":57,"request_time":0.021}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"GET","path":"/api/attendance","status":401,"bytes":53,"request_time":0.009}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"DELETE","path":"/api/shifts/1","status":409,"bytes":72,"request_time":0.077}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"DELETE","path":"/api/users/7","status":200,"bytes":11,"request_time":0.024}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"POST","path":"/api/check-in","status":409,"bytes":108,"request_time":0.040}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"POST","path":"/api/login","status":401,"bytes":52,"request_time":0.019}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"POST","path":"/api/check-out","status":200,"bytes":11,"request_time":0.051}
+	
+		2026-10-21 17:00:02.000	
+{"timestamp":"2026-10-21T10:00:02+00:00","method":"POST","path":"/api/check-out","status":409,"bytes":57,"request_time":0.017}
+	
+		2026-10-21 17:00:01.000	
+{"timestamp":"2026-10-21T10:00:01+00:00","method":"POST","path":"/api/login","status":200,"bytes":169,"request_time":0.526}
+	
+		2026-10-21 17:00:01.000	
+{"timestamp":"2026-10-21T10:00:01+00:00","method":"DELETE","path":"/api/shifts/4","status":200,"bytes":11,"request_time":0.047}
+	
+		2026-10-21 17:00:01.000	
+{"timestamp":"2026-10-21T10:00:01+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.019}
+	
+		2026-10-21 17:00:01.000	
+{"timestamp":"2026-10-21T10:00:01+00:00","method":"POST","path":"/api/check-in","status":409,"bytes":65,"request_time":0.158}
+	
+		2026-10-21 17:00:01.000	
+{"timestamp":"2026-10-21T10:00:01+00:00","method":"GET","path":"/api/attendance","status":200,"bytes":253,"request_time":0.029}
+	
+		2026-10-21 17:00:01.000	
+{"timestamp":"2026-10-21T10:00:01+00:00","method":"POST","path":"/api/check-in","status":201,"bytes":11,"request_time":0.109}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"PUT","path":"/api/users/7","status":200,"bytes":11,"request_time":0.576}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"POST","path":"/api/shifts","status":400,"bytes":117,"request_time":0.031}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"GET","path":"/api/users","status":200,"bytes":784,"request_time":0.025}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"POST","path":"/api/login","status":200,"bytes":169,"request_time":0.518}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.014}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"POST","path":"/api/shifts","status":201,"bytes":8,"request_time":0.041}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"GET","path":"/api/users","status":403,"bytes":60,"request_time":0.025}
+	
+		2026-10-21 17:00:00.000	
+{"timestamp":"2026-10-21T10:00:00+00:00","method":"PUT","path":"/api/shifts/4","status":200,"bytes":11,"request_time":0.040}
+	
+		2026-10-21 16:59:59.000	
+{"timestamp":"2026-10-21T09:59:59+00:00","method":"POST","path":"/api/users","status":409,"bytes":108,"request_time":0.505}
+	
+		2026-10-21 16:59:59.000	
+{"timestamp":"2026-10-21T09:59:59+00:00","method":"POST","path":"/api/users","status":201,"bytes":8,"request_time":0.501}
+	
+		2026-10-21 16:59:58.000	
+{"timestamp":"2026-10-21T09:59:58+00:00","method":"POST","path":"/api/login","status":401,"bytes":52,"request_time":0.493}
+	
+		2026-10-21 16:59:58.000	
+{"timestamp":"2026-10-21T09:59:58+00:00","method":"POST","path":"/api/login","status":200,"bytes":146,"request_time":0.484}
+	
+		2026-10-21 16:59:57.000	
+{"timestamp":"2026-10-21T09:59:57+00:00","method":"GET","path":"/api/session","status":200,"bytes":87,"request_time":0.132}
+	
+		2026-10-21 16:59:57.000	
+{"timestamp":"2026-10-21T09:59:57+00:00","method":"POST","path":"/api/login","status":403,"bytes":73,"request_time":0.030}
+	
+		2026-10-21 16:59:57.000	
+{"timestamp":"2026-10-21T09:59:57+00:00","method":"GET","path":"/api/attendance","status":401,"bytes":36,"request_time":0.038}
+	
+		2026-10-21 16:59:50.000	
+{"timestamp":"2026-10-21T09:59:50+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.012}
+	
+		2026-10-21 16:59:35.000	
+{"timestamp":"2026-10-21T09:59:35+00:00","method":"GET","path":"/health","status":200,"bytes":38,"request_time":0.004}
+	
