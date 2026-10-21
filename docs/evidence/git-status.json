@@ -1,6 +1,7 @@
 {
-  "pushed": false,
-  "timestamp": "2026-10-21T10:26:44.896638+00:00",
-  "local_head": "656eb66862675b45aeb3dfaa3d8313f28ab7a41c",
-  "detail": "GitHub từ chối HTTP403: credential hiện dùng tài khoản tamtran2k6zz, chưa có quyền ghi repository dtc245220021-cloud/Website_DiemDanh_De27. Chờ đăng nhập Git bằng tài khoản được cấp quyền. Không force-push."
+  "pushed": true,
+  "verified_at": "2026-10-21T10:50:34.040416+00:00",
+  "local_head": "a1a87a53b45e5b60a74fa4d84ab87adfd7f3def9",
+  "remote_main": "a1a87a53b45e5b60a74fa4d84ab87adfd7f3def9",
+  "detail": "Local HEAD và origin/main khớp; ba commit kỹ thuật và source đã có trên GitHub."
 }
