@@ -1,0 +1,93 @@
+name: attendance27
+x-safe: &safe
+  restart: unless-stopped
+  security_opt: [no-new-privileges:true]
+  logging:
+    driver: json-file
+    options: {max-size: 10m, max-file: '3'}
+services:
+  permissions:
+    image: alpine:3.22
+    user: '0:0'
+    network_mode: none
+    cap_drop: [ALL]
+    cap_add: [CHOWN, DAC_OVERRIDE, FOWNER]
+    security_opt: [no-new-privileges:true]
+    command: ['sh','-c','chown 1000:1000 /app-logs && chown 101:101 /nginx-logs']
+    volumes: [app_logs:/app-logs, nginx_logs:/nginx-logs]
+  mysql:
+    <<: *safe
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: attendance
+      MYSQL_USER: attendance_app
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Run setup}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Run setup}
+      EXPORTER_PASSWORD: ${EXPORTER_PASSWORD:?Run setup}
+      TZ: Asia/Ho_Chi_Minh
+    command: ['--default-time-zone=+07:00','--log-error-verbosity=2']
+    volumes: [mysql_data:/var/lib/mysql, ./db:/docker-entrypoint-initdb.d:ro]
+    networks: [database]
+    healthcheck:
+      test: ['CMD-SHELL','MYSQL_PWD=$$MYSQL_PASSWORD mysql -uattendance_app -D attendance -e "SELECT COUNT(*) FROM users" >/dev/null 2>&1']
+      interval: 10s
+      timeout: 5s
+      retries: 18
+      start_period: 45s
+  app:
+    <<: *safe
+    build: ./app
+    read_only: true
+    cap_drop: [ALL]
+    tmpfs: ['/tmp:rw,noexec,nosuid,size=32m']
+    environment:
+      DB_PASSWORD: ${DB_PASSWORD}
+      SESSION_SECRET: ${SESSION_SECRET}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      EMPLOYEE_PASSWORD: ${EMPLOYEE_PASSWORD}
+      TZ: Asia/Ho_Chi_Minh
+      NODE_ENV: production
+    volumes: [app_logs:/app/logs]
+    networks: [web, database]
+    depends_on:
+      mysql: {condition: service_healthy}
+      permissions: {condition: service_completed_successfully}
+  nginx:
+    <<: *safe
+    image: nginxinc/nginx-unprivileged:1.28-alpine
+    user: '101:101'
+    read_only: true
+    cap_drop: [ALL]
+    tmpfs: ['/tmp:rw,noexec,nosuid,size=32m']
+    ports: ['127.0.0.1:${WEB_PORT:-8080}:8080']
+    volumes: [./nginx/nginx.conf:/etc/nginx/nginx.conf:ro, nginx_logs:/var/log/attendance]
+    networks: [web]
+    depends_on:
+      app: {condition: service_healthy}
+    healthcheck:
+      test: ['CMD','wget','-qO-','http://127.0.0.1:8080/health']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+  phpmyadmin:
+    <<: *safe
+    image: phpmyadmin:5.2.3-apache
+    environment: {PMA_HOST: mysql, PMA_PORT: 3306, PMA_ARBITRARY: '0', UPLOAD_LIMIT: 32M}
+    ports: ['127.0.0.1:${PMA_PORT:-8081}:80']
+    networks: [management, database]
+    depends_on:
+      mysql: {condition: service_healthy}
+    healthcheck:
+      test: ['CMD','curl','-fsS','http://127.0.0.1/']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+networks:
+  web:
+  database: {internal: true}
+  management:
+volumes:
+  mysql_data:
+  app_logs:
+  nginx_logs:
+

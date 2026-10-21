@@ -1,0 +1,3 @@
+const {test}=require('node:test'); const assert=require('node:assert/strict'); const v=require('../validation');
+test('validate employee boundary and role',()=>{const p={code:'NV01',name:'Mạnh',email:'a@example.test',role:'employee',password:'longPassword123!'}; assert.equal(v.person(p,true),null); for(const x of [{email:'x'},{role:'superadmin'},{password:'short'},{code:'<script>'}]) assert.ok(v.person({...p,...x},true));});
+test('shift range, overnight and invalid minute',()=>{assert.equal(v.shift({name:'Sáng',start_time:'08:00',end_time:'12:00'}),null); for(const [a,b] of [['22:00','06:00'],['08:60','12:00'],['08:00','24:00']])assert.ok(v.shift({name:'Ca',start_time:a,end_time:b}));});

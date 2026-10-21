@@ -1,0 +1,1 @@
+{"name":"attendance-de27","version":"1.0.0","private":true,"scripts":{"start":"node server.js","test":"node --test tests/*.test.js"},"dependencies":{"bcryptjs":"3.0.2","ejs":"3.1.10","express":"5.1.0","express-mysql-session":"3.0.3","express-rate-limit":"8.7.1","express-session":"1.18.2","mysql2":"3.24.6"},"overrides":{"mysql2":"3.24.6"}}
