@@ -29,3 +29,13 @@ docker compose run --rm --no-deps app npm test
 ```
 
 Đây là unit tests validation; kiểm tra tích hợp thật và minh chứng được bổ sung trong `docs/evidence`.
+
+## Monitoring (giai đoạn 2)
+
+```powershell
+python scripts/compose.py 2 up -d --build
+```
+
+Prometheus http://127.0.0.1:9090; Grafana http://127.0.0.1:3001, user `admin`, mật khẩu `GRAFANA_PASSWORD` trong `.env`. Dashboard provision sẵn trong thư mục Attendance. Prometheus scrape chính nó, cAdvisor, Nginx exporter và MySQL exporter mỗi 15 giây. Database exporter dùng tài khoản riêng với SELECT, PROCESS, REPLICATION CLIENT, giới hạn 3 kết nối.
+
+CPU = `100 * rate(container_cpu_usage_seconds_total[2m])`, phần trăm một core (có thể vượt 100% khi dùng nhiều core), không phải phần trăm toàn máy. RAM working set tính bằng bytes, Grafana đổi đơn vị hiển thị; không phải giới hạn RAM. Network là tốc độ bytes/giây. Dashboard lọc `name=~"attendance27-.*"`; cAdvisor vẫn có quyền thấy mọi container trong Docker engine. cAdvisor privileged và mount host chỉ đọc là ngoại lệ bảo mật cần cho metrics, không dùng cấu hình này như mẫu hardening cho app.
