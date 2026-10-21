@@ -1,0 +1,6 @@
+{
+  "pushed": false,
+  "timestamp": "2026-10-21T10:26:44.896638+00:00",
+  "local_head": "656eb66862675b45aeb3dfaa3d8313f28ab7a41c",
+  "detail": "GitHub từ chối HTTP403: credential hiện dùng tài khoản tamtran2k6zz, chưa có quyền ghi repository dtc245220021-cloud/Website_DiemDanh_De27. Chờ đăng nhập Git bằng tài khoản được cấp quyền. Không force-push."
+}

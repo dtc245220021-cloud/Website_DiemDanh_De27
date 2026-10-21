@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T17:26:20.7207533+07:00",
+  "title": "Design System: Attendance",
+  "extensions": {
+    "colorMeta": {
+      "accent": {"role":"primary","displayName":"Forest action green"},
+      "ink": {"role":"neutral","displayName":"Deep green ink"},
+      "paper": {"role":"neutral","displayName":"Soft register paper"},
+      "danger": {"role":"semantic","displayName":"Destructive red"}
+    },
+    "typographyMeta": {
+      "display":{"displayName":"Vietnamese login headline","purpose":"Self-hosted BeVietnamPro semibold, login intro only; 36px at 700px and below."},
+      "body":{"displayName":"Operational system text","purpose":"Segoe UI with Arial and sans-serif fallback; tables and metadata use smaller sizes."}
+    },
+    "shadows": [],
+    "motion": [
+      {"name":"button-background","value":"background .15s ease-out","purpose":"Only under prefers-reduced-motion: no-preference."},
+      {"name":"notice-reveal","value":"reveal .2s ease-out","purpose":"Clip-path inset(0 0 100% 0) to inset(0); only under prefers-reduced-motion: no-preference."}
+    ],
+    "breakpoints": [
+      {"name":"compact-desktop","value":"1000px","description":"Max-width: rail 200px; content padding 24px; live label hidden."},
+      {"name":"mobile","value":"700px","description":"Max-width: top scrolling navigation, stacked attendance and forms, mobile logout, local table overflow."}
+    ]
+  },
+  "components": [
+    {
+      "name":"Primary button","kind":"button","refersTo":"button-primary","description":"Main attendance and save action; 44px minimum height.",
+      "html":"<button class=\"ds-primary\">Vào ca</button>",
+      "css":".ds-primary{font:600 15px/1.6 'Segoe UI',Arial,sans-serif;background:var(--accent,#176348);color:white;border:0;border-radius:7px;padding:11px 19px;min-height:44px;cursor:pointer}.ds-primary:hover{background:#104b36}.ds-primary:focus-visible{outline:3px solid #b37e1b;outline-offset:3px}.ds-primary:disabled{opacity:.55;cursor:wait}@media(prefers-reduced-motion:no-preference){.ds-primary{transition:background .15s ease-out}}"
+    },
+    {
+      "name":"Secondary button","kind":"button","refersTo":"button-secondary","description":"Cancel inline editing.",
+      "html":"<button class=\"ds-secondary\">Hủy</button>",
+      "css":".ds-secondary{font:600 15px/1.6 'Segoe UI',Arial,sans-serif;background:#e9eee5;color:var(--ink,#16372f);border:0;border-radius:7px;padding:11px 19px;min-height:44px;cursor:pointer}.ds-secondary:hover{background:#dce6d5}.ds-secondary:focus-visible{outline:3px solid #b37e1b;outline-offset:3px}@media(prefers-reduced-motion:no-preference){.ds-secondary{transition:background .15s ease-out}}"
+    },
+    {
+      "name":"Labeled field","kind":"input","refersTo":"field","description":"Explicit Vietnamese labels and native validation.",
+      "html":"<label class=\"ds-field\">Email<input type=\"email\" required placeholder=\"ten@attendance.local\"></label>",
+      "css":".ds-field{display:grid;gap:7px;font:600 13px/1.6 'Segoe UI',Arial,sans-serif;color:var(--ink,#16372f)}.ds-field input{font:15px/1.6 'Segoe UI',Arial,sans-serif;min-height:44px;border:1px solid #bac8bf;border-radius:6px;padding:10px 12px;background:white;color:var(--ink,#16372f);caret-color:var(--accent,#176348)}.ds-field input:focus-visible{outline:3px solid #b37e1b;outline-offset:3px}"
+    },
+    {
+      "name":"Workspace navigation","kind":"nav","description":"Selected destination is a tonal field; mobile navigation scrolls locally.",
+      "html":"<nav class=\"ds-nav\" aria-label=\"Điều hướng chính\"><button class=\"ds-nav-item ds-selected\">Điểm danh hôm nay</button><button class=\"ds-nav-item\">Lịch sử điểm danh</button></nav>",
+      "css":".ds-nav{display:grid;gap:7px}.ds-nav-item{font:500 14px/1.6 'Segoe UI',Arial,sans-serif;color:var(--muted,#596b61);background:transparent;text-align:left;border:0;border-radius:7px;padding:12px;min-height:44px;cursor:pointer}.ds-nav-item:hover{background:#f0f5ef}.ds-nav-item.ds-selected{background:#e6eee3;color:#174333;font-weight:650}.ds-nav-item:focus-visible{outline:3px solid #b37e1b;outline-offset:3px}@media(max-width:700px){.ds-nav{display:flex;overflow:auto;gap:4px}.ds-nav-item{white-space:nowrap;font-size:12px;padding:10px}}@media(prefers-reduced-motion:no-preference){.ds-nav-item{transition:background .15s ease-out}}"
+    },
+    {
+      "name":"Attendance status","kind":"chip","refersTo":"badge-open","description":"Read-only text status, not an interactive filter.",
+      "html":"<span class=\"ds-badge\">Đang trong ca</span> <span class=\"ds-badge ds-closed\">Đã hoàn tất</span> <span class=\"ds-badge ds-off\">Đã ngừng</span>",
+      "css":".ds-badge{display:inline-block;font:11px/1.6 'Segoe UI',Arial,sans-serif;background:#e6efdf;color:#285436;padding:4px 9px;border-radius:5px}.ds-badge.ds-closed{background:#eff1ec;color:#52614f}.ds-badge.ds-off{background:#faece9;color:#983c31}"
+    },
+    {
+      "name":"Inline edit container","kind":"card","description":"Flat bordered surface holding admin fields above a table.",
+      "html":"<section class=\"ds-edit\"><h2>Thông tin ca làm</h2><p>Thiết lập khung giờ để nhân viên chọn khi vào ca.</p></section>",
+      "css":".ds-edit{font:15px/1.6 'Segoe UI',Arial,sans-serif;color:var(--ink,#16372f);background:white;border:1px solid var(--line,#dce4dc);border-radius:8px;padding:26px}.ds-edit h2{margin:0;font-size:20px;line-height:1.4;font-weight:650}.ds-edit p{margin:10px 0 0;color:var(--muted,#596b61)}"
+    },
+    {
+      "name":"Current attendance field","kind":"custom","refersTo":"checkin-panel","description":"Clock and shift-state anchor. Example time is illustrative, not evidence.",
+      "html":"<section class=\"ds-checkin\"><p>Chào bạn,</p><h2>08:00:00</h2><p>Bạn chưa vào ca hoặc đã hoàn tất ca làm.</p></section>",
+      "css":".ds-checkin{font:15px/1.6 'Segoe UI',Arial,sans-serif;background:#e7eddf;color:var(--ink,#16372f);padding:32px 36px;border-radius:12px}.ds-checkin p{margin:0}.ds-checkin h2{font-size:54px;line-height:1.25;letter-spacing:-.03em;font-weight:600;font-variant-numeric:tabular-nums;margin:8px 0}@media(max-width:1000px){.ds-checkin{padding:26px}.ds-checkin h2{font-size:44px}}@media(max-width:700px){.ds-checkin{padding:24px}.ds-checkin h2{font-size:46px}}"
+    }
+  ],
+  "narrative": {
+    "northStar":"The Employee Work Register",
+    "overview":"A code-led Vietnamese operational interface centered on one attendance action, a prominent clock and readable records. Forest green, paper and white surfaces convey hierarchy without shadows. The Vietnamese login headline supplies identity while operational screens use familiar system text.",
+    "keyCharacteristics":["Pale attendance field","Locally scrolling tables and navigation","Text accompanies status color","No decorative raster assets"],
+    "rules":[{"name":"Flat register","body":"Use tonal fields, fine borders and spacing rather than shadows.","section":"elevation"},{"name":"Explicit state","body":"Keep attendance and account-status labels alongside semantic colors.","section":"colors"}],
+    "dos":["Do preserve Vietnamese labels and tabular times.","Do retain visible keyboard outlines and local overflow.","Do keep admin edits in their own destination."],
+    "donts":["Don't add decorative raster imagery or fabricated evidence.","Don't use status color alone.","Don't describe unimplemented components as existing behavior."]
+  }
+}
+
