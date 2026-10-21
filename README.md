@@ -39,3 +39,34 @@ python scripts/compose.py 2 up -d --build
 Prometheus http://127.0.0.1:9090; Grafana http://127.0.0.1:3001, user `admin`, mật khẩu `GRAFANA_PASSWORD` trong `.env`. Dashboard provision sẵn trong thư mục Attendance. Prometheus scrape chính nó, cAdvisor, Nginx exporter và MySQL exporter mỗi 15 giây. Database exporter dùng tài khoản riêng với SELECT, PROCESS, REPLICATION CLIENT, giới hạn 3 kết nối.
 
 CPU = `100 * rate(container_cpu_usage_seconds_total[2m])`, phần trăm một core (có thể vượt 100% khi dùng nhiều core), không phải phần trăm toàn máy. RAM working set tính bằng bytes, Grafana đổi đơn vị hiển thị; không phải giới hạn RAM. Network là tốc độ bytes/giây. Dashboard lọc `name=~"attendance27-.*"`; cAdvisor vẫn có quyền thấy mọi container trong Docker engine. cAdvisor privileged và mount host chỉ đọc là ngoại lệ bảo mật cần cho metrics, không dùng cấu hình này như mẫu hardening cho app.
+
+## Logging và chạy đầy đủ (giai đoạn 3)
+
+```powershell
+python scripts/compose.py 3 up -d --build
+python scripts/compose.py 3 ps -a
+python scripts/verify_runtime.py
+```
+
+Loki http://127.0.0.1:3100/ready. Grafana Explore chọn Loki; ba truy vấn trong [docs/logql.md](docs/logql.md). Promtail đọc app/nginx log volumes chỉ đọc, positions có volume riêng; JSON timestamp giữ thời điểm sự kiện UTC/RFC3339. Loki giữ dữ liệu 7 ngày. `auth_enabled=false` chỉ phù hợp localhost demo. Promtail EOL từ 02/03/2026; vẫn dùng theo đề, cần chuyển Alloy cho môi trường lâu dài. `permissions` là init container root chạy xong exit 0; Promtail root chỉ có DAC_READ_SEARCH để đọc logs. MySQL khởi tạo bằng root rồi chạy mysqld UID mysql; phpMyAdmin Apache master root, worker www-data. Không tuyên bố tất cả container non-root.
+
+## Tái kiểm chứng và backup
+
+```powershell
+docker compose run --rm --no-deps app npm test
+python scripts/integration.py
+python scripts/backup_restore.py
+python scripts/verify_runtime.py
+```
+
+Integration dùng Nginx, Node và MySQL thật, tạo tài khoản QA rồi vô hiệu hóa, kiểm tra 27 tình huống (không mock). Backup dump nhất quán bằng `--single-transaction`, nằm trong `backups/` ngoài Git. Restore tạo schema `attendance_restore_<timestamp>` riêng; so checksum users/shifts/attendance, giữ schema thử để xem lại. Không ghi đè attendance. Phiên đăng nhập thay đổi theo request nên không so checksum sessions.
+
+## Hardening và giới hạn
+
+- App UID 1000, Nginx UID 101; read_only, cap_drop ALL, no-new-privileges và tmpfs ở dịch vụ phù hợp. Cấu hình/UID/ports thực tế trong `docs/evidence/runtime.json`.
+- Database ở mạng internal, không publish 3306; app user chỉ SELECT/INSERT/UPDATE/DELETE trên attendance. Exporter có quyền đọc rộng hơn theo yêu cầu metrics, không dùng cho ứng dụng.
+- Công cụ quản trị/monitoring bind 127.0.0.1. Secrets random nằm trong `.env` và `secrets/`, không Git; Docker admin vẫn đọc được env container.
+- Session MySQL, bcrypt 12 rounds, prepared statements, CSRF, rate limit login, CSP, frame denial, nosniff. HTTP localhost chưa mã hóa; bật HTTPS và cookie Secure khi triển khai ngoài máy.
+- Không thay đổi project khác, không xóa volumes. Chưa kiểm thử tải dài, chưa quét CVE toàn bộ image hay cấu hình HA. File app/nginx log chưa rotation tự động (Docker stdout có rotation 10 MB × 3); cần bổ sung trước vận hành dài hạn.
+
+Giờ vào ca demo cho phép ngoài khung giờ của ca; hệ thống ghi thời điểm thực, chưa áp dụng quy định đi muộn/về sớm hoặc xác minh vị trí. Lịch sử giới hạn 500 bản ghi mỗi truy vấn; dùng lọc ngày. Không dùng số giờ này để tính lương.
